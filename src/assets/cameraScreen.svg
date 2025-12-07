@@ -1,0 +1,69 @@
+    <svg 
+        width="120" 
+        height="100" 
+        viewBox="0 0 120 100" 
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+    <style>
+        .main-body{
+            fill: #5a096eff;
+            fill: #de6fd9;
+            stroke: black;
+            stroke-width: 2;
+            mask: url(#carveScreen);
+        }
+        .accents{
+            fill: #4e0542ff;
+            fill: #cd0060;
+            stroke: black;
+            stroke-width: 1;
+        }
+        .middle-band{
+            fill: #2c0942ff;
+            fill: #ff30b5;
+            stroke: black;
+            stroke-width: 2;
+        }
+        .screen{
+            fill: transparent;
+            stroke: black;
+            stroke-width: 2;
+        }
+        .inner-circle{
+            fill: transparent;
+            stroke: black;
+            stroke-width: ;
+        }
+        .lens{
+            fill: #000000;
+            stroke: #929292ff;
+            stroke-width: 0.2;
+        }
+        .glimmer{
+            fill: #FFFFFF;
+            stroke: #cfcfcfff;
+            stroke-width: 0.2;
+        }
+    </style>
+
+    <mask id="carveScreen">
+        <rect x="0" y="0" width="200" height="200" fill="white"/>
+        <rect x="20" y="20" width="80" height="60" rx="15" ry="15" fill="black"/>
+    </mask>
+    <!-- top slip  -->
+    <rect x="40" y="5" width="40" height="10" rx="5" ry="10"
+        class="accents"/>
+
+    <!-- button  -->
+        <rect x="85" y="7" width="8" height="5" rx="1" ry="1"
+            class="accents"/>
+
+    <!-- main body  -->
+        <rect x="10" y="10" width="100" height="80" rx="15" ry="10" 
+            class="main-body"/>
+
+    <!-- screen -->
+        <rect x="20" y="20" width="80" height="60" rx="15" ry="15" fill="black"            class="screen"
+        />
+    </svg>
