@@ -1,18 +1,31 @@
 :root{
-  --bg-soft:#f89cd2ad;
-  --bg-darker:#4e033e;
-  --bg-main:#f89cd293;
+  --bg-main:#f89cd2ad;
+  --bg-header:#4e033e;
+  --bg-container:#f89cd293;
   --bg-card:#ffd4f6;
   --bg-card-selected:#ff50c5;
-  --bg-button-soft:#ffc8dd;
+  --bg-button-option:#ffc8dd;
   --accent:#ff4089;
   --button-shadow: 0 2px 10px #915069;
   --text-header:#fdd1ffff;
+  --text-main:#222222ff;
 }
 
 body{
   margin: 0;
-  background: #f89cd2ad;
+  background: var(--bg-main);
+}
+body.dark-mode{
+  --bg-main:#22061c;
+  --bg-header:#c976ab;
+  --bg-container:#4e033e;
+  --bg-card:#2e0b25;
+  --bg-card-selected:#ff5fbf;
+  --bg-button-option:#3a0f30;
+  --accent:#ff78c8;
+  --button-shadow: 0 2px 10px #000000cc;
+  --text-header:#2a001f;
+  --text-main:#f2f2f2;
 }
 
 html, body, #root {
@@ -33,28 +46,32 @@ html, body, #root {
 
 * h1{
  font-size: 2.8rem; 
+ color: var(--text-main);
 }
 * h2{
   font-size: 1.8rem;
+  color: var(--text-main);
 }
 * h3{
  font-size: 1.5rem; 
  font-weight: normal;
+ color: var(--text-main)
 }
 * p, label{
   font-size: 1.2rem;
+  color: var(--text-main);
 }
 .header-container{
   width: 100%;
 }
 .header{
-  background: #4e033e;
+  background: var(--bg-header);
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 2vw;
   align-items: center;
   padding: 3vh 10% 3vh 10%;
-  color: var(--bg-button-soft);
+  color: var(--bg-button-option);
 }
 .logo{
   display: flex;
@@ -94,7 +111,7 @@ html, body, #root {
 }
 .dark-theme-button:hover{
   background: var(--accent);
-  color: var(--bg-button-soft);
+  color: var(--bg-button-option);
   transition: all .3s ease;
 }
 .dark-theme-button img{
@@ -102,8 +119,8 @@ html, body, #root {
 }
 
 .photobooth-nav-button{
-  background: #4e033e;
-  color: #fdd1ff;
+  background: var(--bg-header);
+  color: var(--text-header);
   border: none;
   border-radius: 50px;
   box-shadow: 0 2px 10px #00000025;
@@ -124,7 +141,7 @@ html, body, #root {
   padding-top: 2vh;
 }
 .option-button{
-  background: var(--bg-button-soft);
+  background: var(--bg-button-option);
   color: #ff69a2;
   border: none;
   border-radius: 50px;
@@ -228,7 +245,7 @@ html, body, #root {
 .output-strip-preview,
 .photobooth-start-page,
 .design-picker{
-  background-color: var(--bg-main);
+  background-color: var(--bg-container);
   border-radius: 20px;
   padding: 5vh;
   margin: 2vh;
@@ -500,7 +517,7 @@ footer{
   width: 100%;
   padding-top: 2vh;
   padding-bottom: 2vh;
-  background-color: #4e033e;
+  background-color: var(--bg-header);
   color: #ffffff98;
 }
 .social-links{

@@ -19,7 +19,6 @@ const STAGE = {
     END: "END",
 }
 
-
 function Photobooth(){
     const [layout, setLayout] = useState(getLayoutSettings("A"));
     const [pictures, setPictures] = useState([]);
@@ -27,6 +26,11 @@ function Photobooth(){
     const [background, setBackground] = useState("none");
     const [filter, setFilter] = useState("none");
     const [stage, setStage] = useState(STAGE.START);
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        document.body.classList.toggle("dark-mode", darkMode);
+    }, [darkMode]);
 
     useEffect(()=>{
         const _background = background!=="none"? background : null;
@@ -65,7 +69,7 @@ function Photobooth(){
     }
     return(
         <div className="photobooth-main">
-            <Header/>
+            <Header isDarkMode={darkMode} onDarkMode={()=>setDarkMode(!darkMode)}/>
             <div className="content">
                 {(stage === STAGE.START) &&
                     (<PhotoboothStartPage onComplete={() =>  goToStage(STAGE.INSTRUCTIONS)}/>)
@@ -114,7 +118,7 @@ function Photobooth(){
                     />)
                 }
             </div>
-            <Footer/>
+            <Footer isDarkMode={darkMode}/>
         </div>
     );
 }
