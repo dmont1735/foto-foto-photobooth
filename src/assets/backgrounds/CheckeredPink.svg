@@ -1,0 +1,20 @@
+<svg width="5000" height="5000" xmlns="http://www.w3.org/2000/svg">
+  <style>
+          .pink{
+              fill: #eec2e3ff;
+          }
+  </style>
+  <defs>
+    <pattern id="check" width="1000" height="1000" patternUnits="userSpaceOnUse">
+      <!-- base color -->
+      <rect width="1000" height="1000" fill="#fff"/>
+      <!-- top-left square -->
+      <rect width="500" height="500" class="pink"/>
+      <!-- bottom-right square -->
+      <rect x="500" y="500" width="500" height="500" class="pink"/>
+    </pattern>
+  </defs>
+
+  <!-- use the pattern -->
+  <rect x="0" y="0" width="5000" height="5000" fill="url(#check)"/>
+</svg>

@@ -46,7 +46,20 @@ function OutputStripPreview({layout, pictureUrls, onPickedFilterCallback, onBack
 
     return(
         <div className="output-strip-preview">
-            <h1>Pick a filter!</h1>
+            <h1>Pick a Filter & Download Your Photos!</h1>
+            <div className="photobooth-nav-options">
+                <button 
+                    className="photobooth-nav-button" 
+                    onClick={handleReturnToPhotos}>
+                    Return to Photos
+                </button>
+                <button
+                    className="photobooth-nav-button"
+                    onClick={handleDownload}>
+                    Download
+                </button>
+
+            </div>
             <div className={`strip-preview-container-${layout.type}`}>
                 <div className="strip-preview">
                     <h3>Photo Strip Preview</h3>
@@ -54,18 +67,7 @@ function OutputStripPreview({layout, pictureUrls, onPickedFilterCallback, onBack
                 </div>
                 <FilterPicker filter={layout.imgStyle.filter} onPickedFilterCallback={onPickedFilterCallback} direction={layout.type}/>
             </div>
-            <div className="photobooth-nav-options">
-                <button
-                    className="photobooth-nav-button"
-                    onClick={handleDownload}>
-                    Download
-                </button>
-                <button 
-                    className="photobooth-nav-button" 
-                    onClick={handleReturnToPhotos}>
-                    Return to Photos
-                </button>
-            </div>
+
 
             {(showWarning) &&
             (<WarningPopup message={

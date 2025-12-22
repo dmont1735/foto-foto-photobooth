@@ -21,6 +21,21 @@ function PhotoboothCamera({layout, picsTakenCallback, pictures, onComplete, onBa
     return (
         <div className="picture-picker">
             <h1>Get Ready for the Pictures!</h1>     
+                <div>
+                    <button 
+                        className="photobooth-nav-button" 
+                        onClick={onBack}>
+                        Return to Design
+                    </button>
+                    {
+                        (pictures.length === layout.totalSlots) && 
+                        (<button 
+                            className="photobooth-nav-button" 
+                            onClick={onComplete}>
+                            Continue to Editing
+                        </button>)
+                    }
+                </div>
             <button 
                 className={pictureSelection==="Camera"? "option-button-selected": "option-button"} 
                 onClick={()=>handlePictureSelection("Camera")}>
@@ -51,21 +66,6 @@ function PhotoboothCamera({layout, picsTakenCallback, pictures, onComplete, onBa
                     (pictures.length !==0) &&
                     (<PreviewsGrid picUrls={pictures} direction="horizontal" scale="scale-up"></PreviewsGrid>)
                 }
-                <div>
-                    <button 
-                        className="photobooth-nav-button" 
-                        onClick={onBack}>
-                        Return to Design
-                    </button>
-                    {
-                        (pictures.length === layout.totalSlots) && 
-                        (<button 
-                            className="photobooth-nav-button" 
-                            onClick={onComplete}>
-                            Continue to Editing
-                        </button>)
-                    }
-                </div>
             </div>
         </div>
     );

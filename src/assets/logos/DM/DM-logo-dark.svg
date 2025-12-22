@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="16 22 108 70"
+  width="150"
+  height="100"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title>DM Logo</title>
+  <desc>Handwritten DM initials</desc>
+
+  <g
+    fill="none"
+    stroke="#24292f"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <!-- D -->
+    <path d="
+      M34 87
+      L34 40
+      C34 30 48 24 60 30
+      C72 36 76 54 68 66
+      C62 74 50 80 20 85
+    "/>
+
+    <!-- M -->
+    <path d="
+      M72 86
+      L78 44
+      C80 36 88 36 90 44
+      L96 60
+      L102 44
+      C104 36 112 36 114 44
+      L120 86
+    "/>
+  </g>
+</svg>
