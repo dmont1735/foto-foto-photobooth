@@ -1,0 +1,105 @@
+    <svg 
+        width="120" 
+        height="100" 
+        viewBox="0 0 120 100" 
+        xmlns="http://www.w3.org/2000/svg"
+    >
+
+    <style>
+        .main-body{
+            fill: #5a096eff;
+            fill: #de6fd9;
+            stroke: black;
+            stroke-width: 2;
+        }
+        .accents{
+            fill: #4e0542ff;
+            fill: #cd0060;
+            stroke: black;
+            stroke-width: 1;
+        }
+        .middle-band{
+            fill: #2c0942ff;
+            fill: #ff30b5;
+            stroke: black;
+            stroke-width: 2;
+        }
+        .outer-circle{
+            fill: #E68EB4;
+            stroke: black;
+            stroke-width: 2;
+        }
+        .inner-circle{
+            fill: #ee449955;
+            stroke: black;
+            stroke-width: ;
+        }
+        .lens{
+            fill: #000000;
+            stroke: #929292ff;
+            stroke-width: 0.2;
+        }
+        .glimmer{
+            fill: #FFFFFF;
+            stroke: #cfcfcfff;
+            stroke-width: 0.2;
+        }
+    </style>
+
+    <!-- top slip  -->
+    <rect x="40" y="5" width="40" height="20" rx="5" ry="10"
+        class="accents"/>
+
+    <!-- button  -->
+        <rect x="25" y="7" width="8" height="5" rx="1" ry="1"
+            class="accents"/>
+
+    <!-- main body  -->
+        <rect x="10" y="10" width="100" height="80" rx="15" ry="10" 
+            class="main-body"/>
+
+    <!-- middle band  -->
+        <rect x="10" y="30" width="100" height="40"
+            class="middle-band"/>
+
+    <!--  flash -->
+        <rect x="85" y="15" width="10" height="5" rx="1" ry="1"
+            fill="black" stroke="black" stroke-width="1"
+        />
+        <rect x="85" y="15" width="10" height="5" rx="1" ry="1"
+            fill="white" stroke="lightgray" stroke-width=".1"
+        />
+
+    <!-- Outer circle -->
+        <rect x="30" y="20" width="60" height="60" rx="100" ry="100"
+            class="outer-circle"
+        />
+    <!-- Inner circle -->
+        <rect x="35" y="25" width="50" height="50" rx="100" ry="100"
+            class="inner-circle"
+        />
+    <!-- lens -->
+        <rect x="40" y="30" width="40" height="40" rx="100" ry="100"
+        class="lens"
+        />
+    <!-- glimmer circle-->
+        <rect x="69" y="37" width="5" height="5" rx="100" ry="100"
+            class="glimmer"
+        />
+    <!-- glimmer curve-->
+        <path d="M44 55
+                A18 18 0 0 0 50 63"
+            fill="none"
+            stroke="lightgray"
+            stroke-width="3.1"
+            stroke-linecap="round"
+        />
+        <path d="M44 55
+                A18 18 0 0 0 50 63"
+            fill="none"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+        />
+    </svg>
+
