@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import WarningPopup from './WarningPopup';
 
 const ImageUploader = ({ label, maxFiles, onFilesChange }) => {

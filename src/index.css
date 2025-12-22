@@ -533,5 +533,149 @@ footer{
 }
 .social-links img:hover{
   transform: scale(1.1);
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+
+  * h1 {
+    font-size: 2rem;
+  }
+  * h2 {
+    font-size: 1.5rem;
+  }
+  * h3 {
+    font-size: 1.3rem;
+  }
+  * p, label {
+    font-size: 1rem;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 2vh;
+    padding: 2vh 5vw;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+  }
+
+.dark-theme-button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.dark-theme-button img {
+  height: 20px;
+  width: auto;
+}
+
+  .instructions,
+  .layout-picker,
+  .picture-picker,
+  .output-strip-preview,
+  .photobooth-start-page,
+  .design-picker {
+    width: 90vw;
+    padding: 4vh 4vw;
+    margin: 2vh auto;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .layout-options-container,
+  .picture-picker-container {
+    width: 90vw;
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .image-grid-normal {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    max-width: 100%;
+  }
+
+  .image-grid-scale-up {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 100%;
+  }
+
+  .image-item-normal,
+  .image-normal {
+    width: 100px;
+    height: 100px;
+  }
+
+  .image-item-scale-up,
+  .image-scale-up {
+    width: 160px;
+    height: 160px;
+  }
+
+.photobooth-nav-button,
+.option-button,
+.option-button-selected {
+  width: auto;
+  min-width: 160px;
+  max-width: 260px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  margin: 10px auto;
+  display: inline-flex;
+  justify-content: center;
+}
+
+  .video-feed {
+    width: 90vw;
+    min-height: 25vh;
+    margin: 2vh auto;
+  }
+
+  .strip-preview-container-vertical {
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .filter-options-vertical {
+    margin-top: 0;
+  }
+
+  .strip-preview-container-horizontal {
+    gap: 4vh;
+  }
+
+  .popup-card {
+    width: 85vw;
+    padding: 3vh 5vw;
+  }
+
+  .popup-title {
+    font-size: 1.6rem;
+  }
+
+  .popup-message {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 8vw;
+  }
+
+  .social-links img {
+    max-height: 50px;
+  }
 }

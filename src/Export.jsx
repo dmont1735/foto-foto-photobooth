@@ -13,7 +13,6 @@ import * as htmlToImage from "html-to-image";
 export async function exportComponentAsFile(element, filename = "component.png") {
   if (!element) return null;
 
-  // Create offscreen container
   const container = document.createElement("div");
   container.style.position = "fixed";
   container.style.top = "-9999px";
@@ -22,14 +21,12 @@ export async function exportComponentAsFile(element, filename = "component.png")
   container.style.pointerEvents = "none";
   document.body.appendChild(container);
 
-  // Render component
   const root = createRoot(container);
   root.render(
     // Wrap element in a div to ensure single DOM root and prevent refs as children
     <div>{element}</div>
   );
 
-  // Wait a short time for layout/DOM to settle
   await new Promise((resolve) => setTimeout(resolve, 150));
 
   try {

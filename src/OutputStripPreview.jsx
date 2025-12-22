@@ -1,8 +1,6 @@
 import { useRef, useState } from "react"
 import FilterPicker from "./FilterPicker.jsx"
-import Photoframe from "./Photoframe.jsx"
 import WarningPopup from "./WarningPopup.jsx"
-import html2canvas from "html2canvas";
 import PhotoframeExport from "./PhotoframeExport.jsx"
 
 function OutputStripPreview({layout, pictureUrls, onPickedFilterCallback, onBack}){
@@ -17,25 +15,18 @@ function OutputStripPreview({layout, pictureUrls, onPickedFilterCallback, onBack
     const canvas = frameRef.current;
     if (!canvas) return;
 
-    // Desired scale for higher resolution
-    const scale = 2; // 2x for sharper export
+    const scale = 2;
 
-    // Create a temporary canvas
     const tempCanvas = document.createElement("canvas");
     tempCanvas.width = canvas.width * scale;
     tempCanvas.height = canvas.height * scale;
     const ctx = tempCanvas.getContext("2d");
 
-    // Scale context
     ctx.scale(scale, scale);
-
-    // Draw the original canvas onto the temporary canvas
     ctx.drawImage(canvas, 0, 0);
 
-    // Export as PNG
     const imgData = tempCanvas.toDataURL("image/png");
 
-    // Trigger download
     const link = document.createElement("a");
     link.href = imgData;
     link.download = "my-photobooth.png";

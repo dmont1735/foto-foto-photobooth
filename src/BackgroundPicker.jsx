@@ -26,11 +26,7 @@ function BackgroundPicker({ onBackgroundCallback }) {
         <div className="background-picker">
             <PreviewsGrid label="Image Background" picUrls={backgroundPreviews} onClickCallback={onBackgroundCallback}></PreviewsGrid>
                 <div className="custom-color-picker">
-                    {/* <button className="option-button">Add Custom Background</button> */}
                     <ImageUploader label="Add Custom Background" onFilesChange={handleBackgroundUpload}/>
-                    {/* <label>Custom Background: </label> */}
-                    {/* <input className="custom-color-preview" type="color" value={color} onChange={handleColorChange}/> */}
-                    {/* <div className="color-display" style = {{backgroundColor: color}}></div> */}
                 </div>
         </div>
     );

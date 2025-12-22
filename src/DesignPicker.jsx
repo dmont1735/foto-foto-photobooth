@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import ColorPicker from "./ColorPicker.jsx"
 import BackgroundPicker from "./BackgroundPicker.jsx"
-import Photoframe from "./Photoframe.jsx";
-import PhotoframeCanvas from "./PhotoframeCanvasRenderer.jsx";
 import PhotoframeExport from "./PhotoframeExport.jsx";
 
 function DesignPicker({layout, onPickedDesignCallback, onComplete, onBack}){

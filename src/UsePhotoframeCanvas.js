@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function usePhotoframeCanvas(pictureUrls, layout) {
   const [slots, setSlots] = useState(null);

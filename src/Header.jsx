@@ -1,15 +1,15 @@
 import DMLogo from "/src/assets/logos/DM/DM-logo-white.svg";
 import DMLogoDark from "/src/assets/logos/DM/DM-logo-dark.svg";
 import cameraLogo from "/src/assets/logos/foto-foto/cameraLogo.svg";
-import darkthemeLogo from "/src/assets/dark-theme-logo.svg";
-import darkthemeLogoWhite from "/src/assets/dark-theme-logo-white.svg";
+import darkModeLogo from "/src/assets/logos/dark-mode/dark-mode.svg";
+import lightModeLogo from "/src/assets/logos/dark-mode/light-mode.svg";
 
 export default function Header({isDarkMode, onDarkMode}){
     function handleChangeDarkMode(){
         onDarkMode();
     }
     const dmLogo = isDarkMode? DMLogoDark : DMLogo;
-    const drkModeLogo = isDarkMode?  darkthemeLogoWhite : darkthemeLogo;
+    const modeLogo = isDarkMode?  lightModeLogo : darkModeLogo;
 
     return (
         <div className="header-container">
@@ -26,8 +26,8 @@ export default function Header({isDarkMode, onDarkMode}){
                         <a href="">Contact</a>
                     </div>
                 </nav>
-                <button className="dark-theme-button" onClick={handleChangeDarkMode}>Dark Mode<img src={drkModeLogo}></img></button>
+                <button className="dark-theme-button" onClick={handleChangeDarkMode}>{isDarkMode? "Light Mode":"Dark Mode"}<img src={modeLogo}></img></button>
             </div>
-            </div>
+        </div>
     );
 }

@@ -1,7 +1,6 @@
 import { forwardRef, useEffect, useRef } from "react";
 
 function parseBorder(border) {
-  // Example: "3px solid #fff"
   if (!border) return { width: 1, color: "#000" };
   const parts = border.split(" ");
   const width = parseInt(parts[0]) || 1;
@@ -24,7 +23,7 @@ const PhotoframeCanvasRenderer = forwardRef(function ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const dpr = 3; // fixed high-DPI for downloads
+    const dpr = 3;
     canvas.width = frameRect.width * dpr;
     canvas.height = frameRect.height * dpr;
     canvas.style.width = `${frameRect.width}px`;

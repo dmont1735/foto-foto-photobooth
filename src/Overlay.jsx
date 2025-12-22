@@ -10,7 +10,6 @@ const Overlay = ({
   const [count, setCount] = useState(start);
   const [cycle, setCycle] = useState(1);
   const [state, setState] = useState("counting"); 
-  // "counting" | "waiting" | "done"
 
   useEffect(() => {
     if (state === "done") {
