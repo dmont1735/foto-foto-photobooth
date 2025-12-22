@@ -1,3 +1,4 @@
+import startPreview from "/src/assets/previews/start-preview.png";
 
 function PhotoboothStartPage({onComplete}){
     return(
@@ -7,7 +8,7 @@ function PhotoboothStartPage({onComplete}){
                 <div className="start-container">
                     <button className="photobooth-nav-button" onClick={onComplete}>START</button>
                     <img className="start-preview"
-                        src="src/assets/previews/start-preview.png"
+                        src={startPreview}
                         alt={`Start Page Example Preview`}>
                     </img>
                 </div>
