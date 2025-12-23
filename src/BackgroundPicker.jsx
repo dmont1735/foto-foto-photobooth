@@ -18,7 +18,6 @@ function BackgroundPicker({ onBackgroundCallback }) {
             const url = file.src;
             pics = [...pics, url];
         });
-        console.log(pics);
         setBackgroundPreviews((prev)=>[...prev, pics]);
     }
 

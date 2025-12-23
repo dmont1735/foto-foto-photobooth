@@ -1,3 +1,5 @@
+import bgPlaidPink from "/src/assets/backgrounds/PlaidPink.svg";
+
 const LAYOUTS = {
   A: {
   index: 0,
@@ -248,7 +250,7 @@ F: {
     padding: "30px 30px 50px",
     borderRadius: "20px",
     boxSizing: "border-box",
-    background:" url('../src/assets/backgrounds/PlaidPink.svg')",
+    background:`url(\"${bgPlaidPink}")`,
     boxShadow: "0 0 10px rgba(0,0,0,0.15)",
   },
   slotStyle: {
@@ -311,10 +313,6 @@ export const tweakLayoutSettings = (layout, backgroundPath, backgroundColor, fil
   const layoutConfig = getLayoutSettings(layout.name);
   const _background = backgroundPath? `url("${backgroundPath}")` : backgroundColor? `${backgroundColor}` : layoutConfig.style.background;
   const _filter = filter? getFilterSettings(filter) : layoutConfig.imgStyle.filter? layoutConfig.imgStyle.filter: "None" ;
-
-  if(scale){
-    
-  }
 
   const style = {
     ...layoutConfig.style,
