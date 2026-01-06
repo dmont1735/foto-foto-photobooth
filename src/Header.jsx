@@ -22,7 +22,7 @@ export default function Header({isDarkMode, onDarkMode}){
                 <nav className="navbar">
                     <div className="nav-links">
                         <Link to="/">Home</Link>
-                        <Link to="/">FAQ</Link>
+                        <Link to="/frequently-asked">FAQ</Link>
                         <Link to="/">Privacy Policy</Link>
                         <Link to="/contact">Contact</Link>
                     </div>

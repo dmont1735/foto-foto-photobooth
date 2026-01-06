@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const DEFAULT_FAQS = [
     {
@@ -39,27 +40,28 @@ export default function FAQ({ faqs = DEFAULT_FAQS, allowMultiple = false }) {
     const isOpen = (i) => openIndexes.includes(i);
 
     return (
-        <section className="frequently-asked" style={styles.container}>
-            <h2 style={styles.title}>Frequently Asked Questions</h2>
-            <div style={styles.list}>
+        <section className="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-list">
                 {faqs.map((item, i) => {
                     const panelId = `faq-panel-${i}`;
                     const buttonId = `faq-button-${i}`;
                     return (
-                        <div key={i} style={styles.item}>
+                        <div key={i}
+                            className="faq-item">
                             <button
                                 id={buttonId}
                                 aria-controls={panelId}
                                 aria-expanded={isOpen(i)}
                                 onClick={() => toggleIndex(i)}
-                                style={{
-                                    ...styles.button,
-                                    ...(isOpen(i) ? styles.buttonOpen : {}),
-                                }}
+                                className={
+                                    isOpen(i) ? "faq-button-open"
+                                            : "faq-button"
+                                }
                             >
                                 <span>{item.q}</span>
-                                <span aria-hidden="true" style={styles.chev}>
-                                    {isOpen(i) ? "−" : "+"}
+                                <span aria-hidden="true" className="faq-button-chev">
+                                    {isOpen(i) ? "-" : "+"}
                                 </span>
                             </button>
 
@@ -67,71 +69,18 @@ export default function FAQ({ faqs = DEFAULT_FAQS, allowMultiple = false }) {
                                 id={panelId}
                                 role="region"
                                 aria-labelledby={buttonId}
-                                style={{
-                                    ...styles.panel,
-                                    maxHeight: isOpen(i) ? 200 : 0,
-                                    padding: isOpen(i) ? "12px 16px" : "0 16px",
-                                    opacity: isOpen(i) ? 1 : 0,
-                                }}
+                                className={
+                                    isOpen(i) ? "faq-panel-open"
+                                            : "faq-panel"
+                                }
                             >
-                                <p style={styles.answer}>{item.a}</p>
+                                <p className="faq-answer">{item.a}</p>
                             </div>
                         </div>
                     );
                 })}
             </div>
+            <p className="faq-cta">Have a different question? Don't hesitate to <Link to="/contact">leave a message!</Link></p>
         </section>
     );
 }
-
-const styles = {
-    container: {
-        maxWidth: 800,
-        margin: "24px auto",
-        padding: "0 16px",
-        fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
-        color: "#111827",
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 12,
-    },
-    list: {
-        borderTop: "1px solid #e5e7eb",
-    },
-    item: {
-        borderBottom: "1px solid #e5e7eb",
-    },
-    button: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%",
-        background: "white",
-        border: "none",
-        padding: "16px",
-        textAlign: "left",
-        cursor: "pointer",
-        fontSize: 16,
-    },
-    buttonOpen: {
-        background: "#f9fafb",
-    },
-    chev: {
-        marginLeft: 12,
-        fontSize: 20,
-        lineHeight: 1,
-        width: 20,
-        textAlign: "center",
-    },
-    panel: {
-        overflow: "hidden",
-        transition: "max-height 220ms ease, opacity 200ms ease, padding 200ms ease",
-        background: "white",
-    },
-    answer: {
-        margin: 0,
-        fontSize: 15,
-        color: "#374151",
-    },
-};

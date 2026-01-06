@@ -541,6 +541,107 @@ footer{
   transition: transform 0.5s ease;
 }
 
+.faq-container{
+  background-color: var(--bg-container);
+  border-radius: 20px;
+  padding: 5vh;
+  margin: 2vh auto;
+  width: 60vw;
+  height: 80vh;
+}
+
+.faq-container h2{
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.faq-list{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+
+.faq-item{
+  background: var(--bg-card);
+  border-radius: 14px;
+  box-shadow: var(--button-shadow);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.faq-item:hover{
+  transform: scale(1.01);
+  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+}
+
+.faq-button,
+.faq-button-open{
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 2vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.faq-button:hover{
+  background: var(--bg-button-option);
+}
+
+.faq-button-open{
+  background: var(--bg-card-selected);
+  color: var(--text-header);
+}
+
+.faq-button span:first-child{
+  text-align: left;
+}
+
+.faq-button-chev{
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--accent);
+  transition: transform .2s ease;
+}
+
+.faq-button-open .faq-button-chev{
+  transform: rotate(180deg);
+  color: var(--text-header);
+}
+
+.faq-panel{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, padding .3s ease;
+  padding: 0 2vw;
+}
+
+.faq-panel-open{
+  max-height: 500px;
+  padding: 2vh 2vw 2.5vh 2vw;
+  background: var(--bg-container);
+}
+
+.faq-answer{
+  margin: 0;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+.faq-cta{
+  text-align: center;
+  margin-top: 3rem;
+}
+.faq-cta a{
+  color: var(--accent);
+  font-weight: 900;
+}
+
 @media (max-width: 768px) {
 
   * h1 {
@@ -679,5 +780,25 @@ footer{
 
   .social-links img {
     max-height: 50px;
+  }
+
+  
+  .faq-container{
+    width: 90vw;
+    padding: 4vh 4vw;
+  }
+
+  .faq-button,
+  .faq-button-open{
+    font-size: 1rem;
+    padding: 2vh 4vw;
+  }
+
+  .faq-button-chev{
+    font-size: 1.5rem;
+  }
+
+  .faq-panel-open{
+    padding: 2vh 4vw;
   }
 }
