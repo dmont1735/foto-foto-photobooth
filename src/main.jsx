@@ -1,7 +1,11 @@
-import { createRoot } from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App.jsx";
 import './index.css'
-import Photobooth from './Photobooth.jsx'
 
-createRoot(document.getElementById('root')).render(
-    <Photobooth/>
+ReactDOM.createRoot(document.getElementById("root")).render(
+     <BrowserRouter basename="/foto-foto-photobooth">
+      <App />
+    </BrowserRouter>
 )

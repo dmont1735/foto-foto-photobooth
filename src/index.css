@@ -19,7 +19,7 @@ body.dark-mode{
   --bg-main:#22061c;
   --bg-header:#c976ab;
   --bg-container:#4e033e;
-  --bg-card:#2e0b25;
+  --bg-card:#421b38;
   --bg-card-selected:#ff5fbf;
   --bg-button-option:#3a0f30;
   --accent:#ff78c8;
@@ -34,10 +34,15 @@ html, body, #root {
 }
 
 .photobooth-main {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.app-layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -101,8 +106,8 @@ html, body, #root {
   display: flex;
   gap: 1vw;
   align-items: center;
-  padding: 0.5vh 1vw;
-  border-radius: 20px;
+  padding: 0.5rem;
+  border-radius: 50%;
   cursor: pointer;
   background: var(--text-header);
   color: var(--accent);
@@ -569,10 +574,7 @@ footer{
   }
 
 .dark-theme-button {
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  gap: 8px;
+  border-radius: 50%;
   margin: 0 auto;
 }
 

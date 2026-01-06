@@ -14,11 +14,11 @@ export default function Footer({isDarkMode}){
     return(
         <footer>
                 <div className="social-links">
-                    <a href="/" target="_blank"><img src={dmLogo} alt="Daniel Monteiro Logo"/></a>
+                    <a href="https://www.danielmonteiro.dev" target="_blank"><img src={dmLogo} alt="Daniel Monteiro Logo"/></a>
                     <a href="https://www.linkedin.com/in/danielarmonteiro/" target="_blank"><img src={linkedinlogo} alt="LinkedIn Logo"/></a>
                     <a href="https://github.com/dmont1735" target="_blank"><img src={githublogo} alt="GitHub Logo"/></a>
                 </div>
-            <span className="copywright"> © 2025 Daniel Monteiro. All Rights Reserved.</span>
+            <span className="copywright">© 2025 Daniel Monteiro. All Rights Reserved.</span>
         </footer>
     );
 }

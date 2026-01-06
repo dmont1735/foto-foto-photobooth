@@ -1,0 +1,86 @@
+/* Page container */
+.contact-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  /* background: var(--bg-main); */
+}
+
+/* Form card */
+.contact-form {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px var(--bg-header);
+}
+
+/* Heading */
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main)
+}
+
+/* Inputs & textarea */
+.form-group input,
+.form-group textarea {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Focus state */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Submit button (scoped) */
+.contact-form button {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--bg-header);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Button hover */
+.contact-form button:hover {
+  background: var(--accent);
+}
+
+/* Status message */
+.status {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}

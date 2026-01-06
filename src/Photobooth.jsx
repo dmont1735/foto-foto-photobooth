@@ -26,11 +26,6 @@ function Photobooth(){
     const [background, setBackground] = useState("none");
     const [filter, setFilter] = useState("none");
     const [stage, setStage] = useState(STAGE.START);
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        document.body.classList.toggle("dark-mode", darkMode);
-    }, [darkMode]);
 
     useEffect(()=>{
         const _background = background!=="none"? background : null;
@@ -69,56 +64,52 @@ function Photobooth(){
     }
     return(
         <div className="photobooth-main">
-            <Header isDarkMode={darkMode} onDarkMode={()=>setDarkMode(!darkMode)}/>
-            <div className="content">
-                {(stage === STAGE.START) &&
-                    (<PhotoboothStartPage onComplete={() =>  goToStage(STAGE.INSTRUCTIONS)}/>)
-                }
-                {
-                    (stage === STAGE.INSTRUCTIONS) &&
-                    (<Instructions
-                        onComplete={() => goToStage(STAGE.LAYOUT_SELECTION)}
-                        onBack={() => goToStage(STAGE.START)}/>)
-                }
-                {
-                    (stage === STAGE.LAYOUT_SELECTION) &&
-                    (<LayoutPicker 
-                        pickedLayout={layout} 
-                        layoutPickedCallback={(l) => handleLayoutChange(l)} 
-                        onComplete={() => goToStage(STAGE.DESIGN_SELECTION)}
-                        onBack={() => goToStage(STAGE.INSTRUCTIONS)}
-                    />)
-                }
-                {
-                    (stage === STAGE.DESIGN_SELECTION ) &&
-                    (<DesignPicker 
-                        layout={layout}
-                        onPickedDesignCallback={handleDesignChange}
-                        onComplete={() => goToStage(STAGE.PICTURE_SELECTION)}
-                        onBack={() => goToStage(STAGE.LAYOUT_SELECTION)}
-                    />)
-                }
-                {
-                    (stage === STAGE.PICTURE_SELECTION) &&
-                    (<PhotoboothCamera 
-                        layout={layout}
-                        picsTakenCallback={handlePicsTakenChange}
-                        pictures={pictures}
-                        onComplete={() => goToStage(STAGE.STRIP_PREVIEW)}
-                        onBack={() => goToStage(STAGE.DESIGN_SELECTION)}
-                    />)
-                }
-                {
-                    (stage === STAGE.STRIP_PREVIEW) && 
-                    (<OutputStripPreview 
-                        pictureUrls={pictures} 
-                        layout={layout} 
-                        onPickedFilterCallback={handleFilterChange} 
-                        onBack={() => goToStage(STAGE.PICTURE_SELECTION)}
-                    />)
-                }
-            </div>
-            <Footer isDarkMode={darkMode}/>
+            {(stage === STAGE.START) &&
+                (<PhotoboothStartPage onComplete={() =>  goToStage(STAGE.INSTRUCTIONS)}/>)
+            }
+            {
+                (stage === STAGE.INSTRUCTIONS) &&
+                (<Instructions
+                    onComplete={() => goToStage(STAGE.LAYOUT_SELECTION)}
+                    onBack={() => goToStage(STAGE.START)}/>)
+            }
+            {
+                (stage === STAGE.LAYOUT_SELECTION) &&
+                (<LayoutPicker 
+                    pickedLayout={layout} 
+                    layoutPickedCallback={(l) => handleLayoutChange(l)} 
+                    onComplete={() => goToStage(STAGE.DESIGN_SELECTION)}
+                    onBack={() => goToStage(STAGE.INSTRUCTIONS)}
+                />)
+            }
+            {
+                (stage === STAGE.DESIGN_SELECTION ) &&
+                (<DesignPicker 
+                    layout={layout}
+                    onPickedDesignCallback={handleDesignChange}
+                    onComplete={() => goToStage(STAGE.PICTURE_SELECTION)}
+                    onBack={() => goToStage(STAGE.LAYOUT_SELECTION)}
+                />)
+            }
+            {
+                (stage === STAGE.PICTURE_SELECTION) &&
+                (<PhotoboothCamera 
+                    layout={layout}
+                    picsTakenCallback={handlePicsTakenChange}
+                    pictures={pictures}
+                    onComplete={() => goToStage(STAGE.STRIP_PREVIEW)}
+                    onBack={() => goToStage(STAGE.DESIGN_SELECTION)}
+                />)
+            }
+            {
+                (stage === STAGE.STRIP_PREVIEW) && 
+                (<OutputStripPreview 
+                    pictureUrls={pictures} 
+                    layout={layout} 
+                    onPickedFilterCallback={handleFilterChange} 
+                    onBack={() => goToStage(STAGE.PICTURE_SELECTION)}
+                />)
+            }
         </div>
     );
 }
