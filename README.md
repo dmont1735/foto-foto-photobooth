@@ -43,7 +43,7 @@ compose, and export photo strips entirely on the client.
 
 ## Screenshots
 
-<table>
+<table align="center">
   <!-- Row 1 -->
   <tr>
     <td align="center">
